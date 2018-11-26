@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html html="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="assets/css/dialog.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script type="text/javascript" src="assets/js/dialog.js"></script> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Website Đặt Món</title>
+</head>
+<body>
+	<div class="main">
+		<!--Header-->
+		<header>
+			<div class="container">
+				<div class="logo">
+					<a href="/" class="home"></a>
+					<!-- <img src="https://www.vietnammm.com/assets/images/logo/vietnammm.png" border="0" alt="datmon"> -->
+				</div>
+				<div class="country">
+					<select id="option-country">
+						<option value="vn">VN</option>
+						<option value="anh">Anh</option>
+						<option value="phap">Pháp</option>
+						<option value="my">Mỹ</option>
+					</select>
+				</div>
+				<div class="info">
+					<a (click)="loadDialog()" class="login-window button"><i class="fa fa-bars"></i></a>
+			        <div id="login-box" class="login">
+			            <p class="login_title">Tài Khoản Của Tôi</p>
+			            <a (click)="closeDialog()" class="close"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+			            <form method="post" class="login-content" action="#">
+			            	<div class="userpanel-wrapper">
+			            		<ul>
+			            			<li><a href="#" class="dangnhap"><i class="fa fa-user" aria-hidden="true"></i> Đăng Nhập </a></li>
+			            			<li><a href="#" class="dangky"><i class="fa fa-registered" aria-hidden="true"></i> Đăng Ký </a></li>
+
+			            		</ul>
+			            	</div>
+			            <!-- <label class="username">
+			            <span>Tên hoặc email</span>
+			            <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+			            </label>
+			            <label class="password">
+			            <span>Mật khẩu</span>
+			            <input id="password" name="password" value="" type="password" placeholder="Password">
+			            </label>
+			            <button class="button submit-button" type="button">Đăng nhập</button>
+			            <p>
+			            <a class="forgot" href="#">Quên mật khẩu?</a>
+			            </p>     -->   
+			            </form> 
+			        </div>
+				</div>
+				<div class="thongtin">
+					<h1><span>Đặt thức ăn dễ dàng</span></h1>
+					<h2><span>Chọn nhà hàng trong khu vực của bạn</span></h2>
+					<div class="hienthi">
+						<form>
+							<select>
+								<option>Chọn Thành Phố</option>
+								<option>Hà Nội</option>
+								<option>Hội An</option>
+								<option>TP HCM</option>
+								<option>Đà Nẵng</option>
+							</select>
+						</form>
+						<form>
+							<select>
+								<option>Chọn Quận</option>
+							</select>
+						</form>
+						<div class="hienthi"><a href="#" class="hienthi-a">HIỂN THỊ</a></div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--End-Header-->
+		<!--Content-->
+		<div class="content">
+			<div class="container">
+				<div class="sudung">
+					<h2><span>Sử dụng Vietnammm.com như thế nào ?</span></h2>
+					<h2><span class="h1">Vô cùng dễ dàng</span></h2>
+				</div>
+				<div class="huongdan">
+					<div class="buoc b1">
+						<img src="assets/image/b1.png">
+						<h3><span>Nhập vị trí của bạn</span></h3>
+						<p>Chọn quận của bạn để hiển thị danh sách nhà hàng</p>
+					</div>
+					<div class="buoc b2">
+						<img src="assets/image/b2.png">
+						<h3><span>Nhập vị trí của bạn</span></h3>
+						<p>Chọn quận của bạn để hiển thị danh sách nhà hàng</p>
+					</div>
+					<div class="buoc b3">
+						<img src="assets/image/b3.png">
+						<h3><span>Nhập vị trí của bạn</span></h3>
+						<p>Chọn quận của bạn để hiển thị danh sách nhà hàng</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content-app-inner">
+					<div class="app-inner">
+					<!-- 	<img src="assets/image/apps_vn.jpg"> -->
+						<h1><span>Tải ứng dụng Vietnammm.com</span></h1>
+						<h1><span>Click chuột và tận hưởng sự tiện dụng</span></h1>
+						<img src="assets/image/android.png">
+						<img src="assets/image/ios.png">
+					</div>
+		</div>
+		<div class="uudai">
+			<div class="container">
+				<div class="title">
+					<h1><span>Vietnammm.com</span></h1>
+					<h1><span id="tg">Thời gian quý báu cho bạn</span></h1>
+				</div>
+				<div class="box-ud">
+					<div class="ud ud1">
+						<span class="listbox-icon" data-icon=""><i class="fa fa-bullhorn"></i></span>
+						<h2><span>Uư đãi cho bạn</span></h2>
+						<ul>
+							<li>
+								Khuyến mãi hằng ngày và xu hướng mới trên Twitter, Facebook và Instagram.
+							</li>
+						</ul>
+					</div>
+					<div class="ud ud2">
+						<span class="listbox-icon" data-icon=""><i class="fa fa-handshake-o"></i></span>
+						<h2><span>Đảm bảo với bạn</span></h2>
+						<ul>
+							<li>Không tính phí dịch vụ</li>
+							<li>Chất lượng dịch vụ tuyệt vời</li>
+							<li>Giá đảm bảo: thanh toán với giá bằng với giá tại nhà hàng</li>
+						</ul>
+					</div>
+					<div class="ud ud3">
+						<span class="listbox-icon" data-icon=""><i class="fa fa-check" aria-hidden="true"></i></span>
+						<h2><span>Lợi ích cho bạn</span></h2>
+						<ul>
+							<li>1500 nhà hàng đối tác giao tận nơi cho mọi nhu cầu của bạn</li>
+							<li>Thanh toán online hoặc bằng tiền mặt</li>
+							<li>Đặt món mọi lúc mọi nơi bằng ứng dụng di động</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="banquyen">
+			<a href="#">
+				<img src="assets/image/dadangky.png">
+			</a>
+			<a href="#">
+				<img src="assets/image/safeweb.png">
+			</a>
+		</div>
+		<!--End-Content-->
+		<!--Footer-->
+		<div class="footer">
+			<div class="container">
+				<div class="sub-footer">
+					<div class="monhoc">Công Cụ Phát Triển Phần Mềm</div>
+					<div class="nhom">Nhóm 4</div>
+					<div class="divider"></div>
+					<div class="leftpart">
+						<a href="#">Giới thiệu một nhà hàng</a>
+						<a href="#">Đăng ký nhà hàng</a>
+						<a href="#">Tuyển dụng</a>
+						<a href="#">Cam kết bảo mật</a>
+						<a href="#">Chính sách giải quyết khiếu nại</a>
+					</div>
+					<div class="copyright">
+						<p>© 2018 Vietnammm.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--End-Footer-->
+	</div>
+</body>
+</html>

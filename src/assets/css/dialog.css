@@ -1,0 +1,129 @@
+/*phần tử phủ toàn màn hình*/
+
+a, a:visited, a:active{
+    text-decoration:none;
+}
+i.fa.fa-cutlery {
+    width: 12%;
+}
+/* lớp login - cửa sổ đăng nhập*/
+.login
+{
+    background-color: #ff8000;
+    height: auto;
+    width: 450px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding-bottom: 5px;
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    z-index: 99999;
+    top: 10%;
+    left: 50%;
+    margin-left: -230px;
+}
+		
+.login .login_title
+{
+    color:white;
+    font-size:16px;
+    padding:8px 0 5px 8px;
+    text-align:center;
+}
+
+.login-content label {
+    display: block;
+    padding-bottom: 7px;
+}
+
+.login-content span {
+    display: block;
+}
+.login-content
+{
+    background-color:white;
+    height:auto;
+    padding-top:15px;
+    overflow:hidden;
+}
+	
+.img-close {
+    float: right;
+    margin-top:-43px;
+    margin-right:5px
+}	
+.button{
+    display: inline-block;
+    min-width: 29px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    height: 35px;
+    padding: 0px 8px;
+    line-height: 35px;
+    border-radius: 4px;
+    transition: all 0.218s ease 0s;
+    border: 1px solid #DCDCDC;
+    background-color: #F5F5F5;
+    background-image: -moz-linear-gradient(center top , #F5F5F5, #F1F1F1);
+    cursor: pointer;
+    background: #444;
+}
+.button:hover{
+    background: #fff;
+    color: #444;
+}
+.login input
+{
+    border:1px solid #D5D5D5;
+    border-radius:5px;
+    box-shadow:1px 1px 5px rgba(0,0,0,.07) inset;
+    color:black;
+    font:12px/25px "Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    height:28px;
+    padding:0px 8px;
+    word-spacing:0.1em;
+    width:300px;
+}
+.submit-button{
+    display: inline-block;
+    padding: auto;
+    margin: 15px 75px;
+    width: 150px;
+}
+i.fa.fa-window-close {
+    position: absolute;
+    padding: 20px;
+    right: 0;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: -60px;
+}
+li a {
+    display: block;
+    color: #333;
+    position: relative;
+}
+.userpanel-wrapper li {
+    font-size: 14px;
+    list-style-type: none;
+    cursor: pointer;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 16px;
+    white-space: nowrap;
+    border-bottom: 1px solid #e6e2e2;
+    background: #fff;
+    position: relative;
+}
+.userpanel-wrapper li a:hover {
+    color: #3c8fca;
+}
+a.dangky {
+    float: left;
+}
+a.dangnhap {
+    float: left;
+}
