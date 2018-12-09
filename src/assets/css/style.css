@@ -76,7 +76,7 @@ select#option-country option{
     margin: 15px -130px 0px 0px;
 }
 header {
-    background: url(assets/image/backgroud.png) 0 00px/cover no-repeat;
+    background: url(../image/backgroud.png) 0 00px/cover no-repeat;
     height: 530px;
     text-align: center;
 }
@@ -129,7 +129,7 @@ span.h1 {
     height: 450px;
 }
 .content-app-inner {
-    background: url(assets/image/apps_vn.jpg) 0 00px/cover no-repeat;
+    background: url(../image/apps_vn.jpg) 0 00px/cover no-repeat;
     width: 100%;
     height: 450px;
 }
@@ -209,7 +209,7 @@ span.listbox-icon {
     box-shadow: 2px 2px 10px 0 hsla(0,0%,50%,.4);
 }
 .box-ud .ud ul li {
-    list-style-image: url(assets/image/list.png);
+    list-style-image: url(../image/list.png);
     margin-top: 10px;
 }
 .banquyen img {
@@ -283,6 +283,7 @@ span.listbox-icon {
     overflow: hidden;
     margin: 0 auto;
     padding: 15px;
+    background: #fff;
 }
 .soluong {
     padding: 10px;
@@ -394,4 +395,225 @@ span.listbox-icon {
 }
 .title-right a:hover{
     background: #50aecc;
+}
+
+
+.img-logo img {
+    width: 88%;
+    padding: 8px 16px;
+    position: relative;
+    text-align: center;
+    float: left;
+}
+.mon-an ul li {
+    list-style: none;
+    font-size: 16px;
+    line-height: 30px;
+}
+.mon-an ul li a:hover {
+    text-decoration: underline;
+    color: #50aecc;
+}
+button.btn-price {
+    position: relative;
+    border-radius: 3px;
+    padding: 0 15px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #fff;
+    box-shadow: 0 2px 2px rgba(0,0,0,.2);
+    background-color: #50aecc;
+    font-size: 13px;
+    height: 35px;
+    line-height: 31px;
+    float: right;
+    white-space: nowrap;
+    border: none;
+    margin-top: -35px;
+}
+button.btn-price:hover {
+    background: #3595b4;
+}
+.title-mon a {
+    font-size: 20px;
+    color: #000;
+    line-height: 35px;
+}
+.loai-mon {
+    font-size: 15px;
+    color: #706d6d;
+    line-height: 25px;
+}
+span.tl-mon-an {
+    display: block;
+    margin: 8px 0 16px;
+    font-weight: 400;
+    color: #333;
+    font-size: 1.4rem;
+    line-height: 1.6em;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.thanhtoan h2 {
+    padding: 0;
+    margin-bottom: 14px;
+    line-height: 35px;
+    border-bottom: 1px dotted #ccc;
+    font-size: 1.5em;
+    padding-bottom: 15px;
+    font-weight: 400;
+}
+.thanhtoan{
+    background: #fff;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 10px;
+}
+.grid {
+    width: 50%;
+    float: left;
+}
+input.address {
+    position: relative;
+    width: 90%;
+    z-index: 1;
+    background: none;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 8px 16px;
+    height: 20px;
+}
+select.sl {
+    position: relative;
+    width: 96%;
+    z-index: 1;
+    background: none;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 8px 16px;
+    margin: 0 auto;
+    height: 40px;
+}
+.thongtincanhan p.thongtincanhan {
+    padding: 0;
+    margin-bottom: 14px;
+    line-height: 35px;
+    border-bottom: 1px dotted #ccc;
+    font-size: 1.5em;
+    padding-bottom: 15px;
+    font-weight: 400;
+    float: left;
+    width: 100%;
+}
+.thoigiangiaohang p.thoigiangiaohang {
+    padding: 0;
+    margin-bottom: 14px;
+    line-height: 35px;
+    border-bottom: 1px dotted #ccc;
+    font-size: 1.5em;
+    padding-bottom: 15px;
+    font-weight: 400;
+    float: left;
+    width: 100%;
+}
+textarea.ghichu {
+    position: relative;
+    width: 90%;
+    z-index: 1;
+    background: none;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 8px 16px;
+    margin: 0 auto;
+    height: 200px;
+}
+.hoantat {
+    width: 48%;
+    float: right;
+    margin: 20px 25px;
+}
+button.btn-hoantat {
+    position: relative;
+    border-radius: 3px;
+    padding: 0 16px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #fff;
+    box-shadow: 0 2px 2px rgba(0,0,0,.2);
+    background-color: #50aecc;
+    height: 50px;
+    line-height: 50px;
+    text-transform: uppercase;
+    width: 100%;
+    margin-bottom: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 600;
+    font-size: 20px;
+    border: none;
+}
+/**
+ * Checkbox Five
+ */
+.checkboxFive {
+    width: 100%;
+    margin: 5px 10px;
+    position: relative;
+}
+.checkboxFive span {
+    margin-left: 10px;
+}
+.checkboxFive label {
+    cursor: pointer;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    background: #eee;
+    border:1px solid #ddd;
+}
+.checkboxFive label:after {
+    opacity: 0.2;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 6px;
+    left: 7px;
+    border: 3px solid #333;
+    border-top: none;
+    border-right: none;
+ 
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.checkboxFive label:hover::after {
+    opacity: 0.5;
+}
+/**
+ * Create the checkbox state for the tick
+ */
+.checkboxFive input[type=checkbox]:checked + label:after {
+    opacity: 1;
 }

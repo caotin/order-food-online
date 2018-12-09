@@ -5,35 +5,41 @@ import { AppRoutingModule } from './app.routing';
 import { HomeModule } from './home/home.module';
 import * as $ from 'jquery';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { UserLoginService } from './core/service/user-login.service';
+import { SharedComponent } from './core/shared/shared.component';
+import { CityService } from './core/service/city.service';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FormsModule } from '@angular/forms';
+import { NothingComponent } from './nothing/nothing.component';
+import { PageErrorComponent } from './page-error/page-error.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SharedComponent,
+    NothingComponent,
+    PageErrorComponent
   ],
   imports: [
     BrowserModule,
     HomeModule,
-    AppRoutingModule,
+    FormsModule,
     DashboardModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireDatabaseModule,
-    AngularFireModule.initializeApp({
-      apiKey: "AIzaSyCFNa4FKdG5N4OHCVNQ3OB83iTAIkN2b1Y",
-      authDomain: "datmon-16796.firebaseapp.com",
-      databaseURL: "https://datmon-16796.firebaseio.com",
-      projectId: "datmon-16796",
-      storageBucket: "datmon-16796.appspot.com",
-      messagingSenderId: "863889189738"
-    })
+    AngularFireStorageModule
   ],
   exports:[
   ],
   providers: [
-    UserLoginService
+    UserLoginService,
+    CityService
   ],
   bootstrap: [AppComponent]
 })

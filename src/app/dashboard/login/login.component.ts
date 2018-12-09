@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   onLogin(event) {
     if (event && event.email && event.password) {
       this.userLogin.login(event.email, event.password).subscribe(
-        () => this.router.navigate(['/dashboard']),
+        () => { this.router.navigate(['/dashboard']); localStorage.setItem("datmon_email", event.email) },
         alert
       );
     }

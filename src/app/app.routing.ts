@@ -5,19 +5,38 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { IndexComponent } from './home/index/index.component';
 import { IndexDashboardComponent } from './dashboard/index/index.component';
 import { LoginComponent } from './dashboard/login/login.component';
+import { SearchComponent } from './home/search/search.component';
+import { RestaurantComponent } from './home/restaurant/restaurant.component';
+import { NothingComponent } from './nothing/nothing.component';
+import { ManagerComponent } from './dashboard/manager/manager.component';
+import { UsersComponent } from './dashboard/users/users.component';
+import { FoodComponent } from './dashboard/food/food.component';
+import { PageErrorComponent } from './page-error/page-error.component';
 
 const routes: Routes = [
     {
-        path: '', component: HomeComponent, children: [
-            { path: '', component: IndexComponent }
+        path: 'dashboard', component: DashboardComponent, children: [
+            { path: '', component: IndexDashboardComponent },
+            { path: 'order', component: ManagerComponent },
+            { path: 'setting', component: UsersComponent },
+            { path: 'food', component: FoodComponent }
         ]
     },
     {
-        path: 'dashboard', component: DashboardComponent, children: [
-            { path: '', component: IndexDashboardComponent },
+        path: '', component: HomeComponent, children: [
+            { path: '', component: IndexComponent },
+            { path: 'search/:city/:township', component: SearchComponent },
+            { path: 'search/:city/:township/:id', component: RestaurantComponent },
         ]
     },
-    { path: 'login', component: LoginComponent }
+
+    {
+        path: '', component: NothingComponent, children: [
+            { path: 'login', component: LoginComponent }
+        ]
+    },
+    { path: '**', redirectTo: '', pathMatch: 'full' },
+
 ];
 
 @NgModule({

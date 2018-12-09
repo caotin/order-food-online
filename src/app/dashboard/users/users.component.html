@@ -1,3 +1,91 @@
-<p>
-  users works!
-</p>
+<div id="page-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Setting</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+  </div>
+  <!-- /.row -->
+  <div class="row">
+    <form [formGroup]="myForm">
+      <div class="form-group">
+        <label>Tên nhà hàng</label>
+        <input class="form-control" formControlName="name" placeholder="Tên nhà hàng">
+        <p class="error text-danger" *ngIf="!myForm.controls['name'].valid && myForm.controls['name'].touched">Tên nhà
+          hàng phải có</p>
+      </div>
+      <div class="form-group">
+        <label>Địa chỉ</label>
+        <input class="form-control" formControlName="address" placeholder="Địa chỉ">
+        <p class="error text-danger" *ngIf="!myForm.controls['address'].valid && myForm.controls['address'].touched">Địa
+          chỉ phải có</p>
+      </div>
+      <div class="form-group">
+        <label>Thành phố</label>
+        <select class="form-control" formControlName="idCity" style="margin-left: 0px;">
+          <option value="undefine">Chọn thành phố</option>
+          <option *ngFor="let c of city" [value]="c.id">{{c.name}}</option>
+        </select>
+        <p class="error text-danger" *ngIf="!myForm.controls['idCity'].valid && myForm.controls['idCity'].touched">Phải
+          chọn một thành phố</p>
+      </div>
+      <div class="form-group">
+        <label>Số điện thoại</label>
+        <input class="form-control" formControlName="hotline" placeholder="Số điện thoại">
+        <p class="error text-danger" *ngIf="!myForm.controls['hotline'].valid && myForm.controls['hotline'].touched">Số
+          điện thoại phải có</p>
+      </div>
+      <!-- <div class="form-group">
+        <label>Hình thức thanh toán</label>
+        <label formArrayName="pay" *ngFor="let p of myForm.controls['pay'].controls; let i = index">
+          <input type="checkbox" [formControlName]="i">
+          {{pay[i].name}}
+        </label>
+      </div> -->
+      <!-- <div class="form-group">
+        <label>Khu vực giao hàng</label>
+        <label formArrayName="pay" *ngFor="let p of myForm.controls['pay'].controls; let i = index">
+          <input type="checkbox" [formControlName]="i">
+          {{pay[i].name}}
+        </label>
+      </div> -->
+      <div class="form-group">
+        <label>Đơn hàng tối thiểu</label>
+        <input class="form-control" formControlName="payMin" placeholder="Đơn hàng tối thiểu">
+        <p class="error text-danger" *ngIf="!myForm.controls['payMin'].valid && myForm.controls['payMin'].touched">Đơn
+          hàng tối thiểu phải có</p>
+      </div>
+      <div class="form-group">
+        <label>Thời gian mở cửa</label>
+        <input class="form-control" formControlName="timeOpen" placeholder="Thời gian mở cửa">
+        <p class="error text-danger" *ngIf="!myForm.controls['timeOpen'].valid && myForm.controls['timeOpen'].touched">Thời
+          gian mở cửa phải có</p>
+      </div>
+      <div class="form-group">
+        <label>Đơn hàng tối thiểu</label>
+        <input class="form-control" formControlName="payMin" placeholder="Đơn hàng tối thiểu">
+        <p class="error text-danger" *ngIf="!myForm.controls['payMin'].valid && myForm.controls['payMin'].touched">Đơn
+          hàng tối thiểu phải có</p>
+      </div>
+      <div class="form-group">
+        <label>Phí vận chuyển</label>
+        <input class="form-control" formControlName="transportFee" placeholder="Phí vận chuyển">
+        <p class="error text-danger" *ngIf="!myForm.controls['transportFee'].valid && myForm.controls['transportFee'].touched">Phí
+          vận chuyển phải có</p>
+      </div>
+      <div class="form-group">
+        <label>Thời gian vận chuyển</label>
+        <input class="form-control" formControlName="transportTime" placeholder="Thời gian vận chuyển">
+        <p class="error text-danger" *ngIf="!myForm.controls['transportTime'].valid && myForm.controls['transportTime'].touched">Thời
+          gian vận chuyển phải có</p>
+      </div>
+      <div class="form-group">
+        <label>Hình ảnh</label><br>
+        <img *ngIf="url" [src]="url" height="200px">
+        <input type="file" (change)="onSelectFile($event)" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="myForm.valid && onSubmit(myForm.value)">Save</button>
+      <!-- <button type="reset" class="btn btn-default">Reset Button</button> -->
+    </form>
+  </div>
+</div>

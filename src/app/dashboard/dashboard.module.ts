@@ -10,6 +10,11 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
 import { FoodComponent } from './food/food.component';
 import { UsersComponent } from './users/users.component';
 import { ManagerComponent } from './manager/manager.component';
+import { ProfileComponent } from './profile/profile.component';
+import { DheaderComponent } from './dheader/dheader.component';
+import { DfooterComponent } from './dfooter/dfooter.component';
+import { DsidebarComponent } from './dsidebar/dsidebar.component';
+
 
 @NgModule({
   imports: [
@@ -17,7 +22,7 @@ import { ManagerComponent } from './manager/manager.component';
     RouterModule,
     ReactiveFormsModule
   ],
-  declarations: [DashboardComponent,IndexDashboardComponent, LoginComponent, RestaurantComponent, FoodComponent, UsersComponent, ManagerComponent],
-  exports: [DashboardComponent,IndexDashboardComponent]
+  declarations: [DashboardComponent,IndexDashboardComponent, LoginComponent, RestaurantComponent, FoodComponent, UsersComponent, ManagerComponent, ProfileComponent, DheaderComponent, DfooterComponent, DsidebarComponent],
+  exports: [DashboardComponent,IndexDashboardComponent, LoginComponent, RestaurantComponent, FoodComponent, UsersComponent, ManagerComponent, ProfileComponent, DheaderComponent, DfooterComponent, DsidebarComponent]
 })
 export class DashboardModule { }
