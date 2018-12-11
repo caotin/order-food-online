@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dheader',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DheaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
+  onLogout(){
+    localStorage.removeItem("datmon_email");
+    this.router.navigate(['/login']);
+    
+  }
 }

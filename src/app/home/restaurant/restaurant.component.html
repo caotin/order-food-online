@@ -6,9 +6,14 @@
         <img [src]="restaurant?.image" (error)="checkImageR = false">
       </div>
       <div class="mon-an">
+        <h4>Thông tin nhà hàng</h4>
+        <p>Tên nhà hàng:</p>
+        <ul>
+          <li>{{restaurant?.name}}</li>
+        </ul>
         <p>Giờ giao hàng:</p>
         <ul>
-          <li *ngFor="let r of restaurant?.timeOpen">{{r}}</li>
+          <li>{{restaurant?.timeOpen}}</li>
         </ul>
         <p>Địa chỉ:</p>
         <ul>
@@ -16,20 +21,32 @@
         </ul>
         <p>Hình thức thanh toán:</p>
         <ul>
-          <li *ngFor="let p of restaurant?.pay">{{p == 'zalopay' ? "Zalo Pay": "Trực tiếp"}}</li>
+          <li>Tiền mặt</li>
         </ul>
         <p>Khu vực giao hàng:</p>
         <ul>
           <li *ngFor="let a of area">{{a.name+', '+a.city}}</li>
         </ul>
       </div>
+      <div class="donhang">
+        <h4>Giỏ hàng</h4>
+        <div>
+          <ul>
+            <li *ngFor="let li of listItem">{{li.name}} {{li.price}} {{li.number}}</li>
+            <li>Tổng cộng: {{sum()}}</li>
+            <li *ngIf="sum()"><button class="btn btn-primary" (click)="sendData()">Gửi đơn hàng</button></li>
+          </ul>
+        </div>
+      </div>
     </div>
+
+
     <div class="column-right">
       <div class="mon-yeu-thich">
         <span class="tl-mon-an">Món Mới</span>
         <div class="col line-1" *ngFor="let f of food">
           <div class="mon-an-logo" *ngIf="checkImage">
-            <img [src]="f.image" (error)="checkImage = false">
+            <img class="thumbnail" width="200px" [src]="f.image" (error)="checkImage = false">
           </div>
           <div class="tt-mon-right">
             <div class="title-mon">
@@ -37,7 +54,8 @@
             </div>
           </div>
           <div class="tt-mon-left">
-            <button class="btn-price"><span class="price">{{f.price}} | <i class="fa fa-plus" aria-hidden="true"></i></span></button>
+            <button class="btn-price" (click)="onAddItem(f)"><span class="price">{{f.price}} | <i class="fa fa-plus"
+                  aria-hidden="true"></i></span></button>
           </div>
         </div>
       </div>

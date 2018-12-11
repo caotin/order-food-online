@@ -5,11 +5,11 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
   providedIn: 'root'
 })
 export class FoodService {
-
+  table = "food";
   constructor(private db: AngularFirestore) { }
 
   findAll() {
-    return this.db.collection('food').valueChanges();
+    return this.db.collection(this.table).valueChanges();
   }
 
   findByTownship(township: string) {
@@ -17,8 +17,16 @@ export class FoodService {
   }
 
   findByIdRestaurant(id: string) {
-    return this.db.collection("food", ref => ref.where("idRestaurant", "==", id)).valueChanges();
+    return this.db.collection(this.table, ref => ref.where("idRestaurant", "==", id)).valueChanges();
   }
 
-
+  addNew(data){
+    return this.db.collection(this.table).doc(data.id).set(data);
+  }
+  updateData(data){
+    return this.db.collection(this.table).doc(data.id).update(data);
+  }
+  delete(id){
+    return this.db.collection(this.table).doc(id).delete();
+  }
 }

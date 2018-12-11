@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestaurentService } from 'src/app/core/service/restaurent.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FoodService } from 'src/app/core/service/food.service';
 
 @Component({
@@ -15,8 +15,9 @@ export class RestaurantComponent implements OnInit {
   restaurant: any;
   city: any;
   area: any;
-
-  constructor(private rs: RestaurentService, private route: ActivatedRoute, private fs: FoodService) { }
+  listItem: Array<any> = [];
+  idRestaurant: any;
+  constructor(private rs: RestaurentService, private route: ActivatedRoute, private fs: FoodService, private router: Router) { }
 
   ngOnInit() {
     const self = this;
@@ -25,9 +26,10 @@ export class RestaurantComponent implements OnInit {
     this.route.params.subscribe(paramsId => {
       if (paramsId['id']) {
         let id = paramsId['id'];
+        this.idRestaurant = paramsId['id'];
         this.rs.findById(id).subscribe(data => {
-          if (data && data.length && this.city) {
-            self.restaurant = data[0];
+          if (data && this.city) {
+            self.restaurant = data;
             self.area = self.city.filter(value => {
               return value.id == self.restaurant.idCity;
             })
@@ -49,20 +51,66 @@ export class RestaurantComponent implements OnInit {
     const self = this;
     if (self.area && township && township.length) {
       let area = self.area[0];
-      console.log("area",area);
-      
+      console.log("area", area);
+
       return area.townships.map(item => {
         let t = township.filter(i => {
           return i == item.id;
         })
         if (t && t.length)
           return { name: item.name, city: area.name };
-      }).filter(f=>{
+      }).filter(f => {
         return f;
       })
     }
     return [];
   }
 
+  onAddItem(item) {
+    let self = this;
+    console.log(item);
 
+    if (item) {
+      if (this.check(item)) {
+        this.listItem = this.listItem.map(e => {
+          if (e.id == item.id) {
+            let number = Number.parseInt(e.number);
+            number++;
+            return { id: item.id, name: item.name, price: item.price, number: number }
+          }
+          return e;
+        })
+      }
+      else {
+        this.listItem.push({ id: item.id, name: item.name, price: item.price, number: 1 });
+
+      }
+      console.log(this.listItem);
+
+    }
+  }
+  check(item) {
+    let f = this.listItem.filter(e => {
+      return e.id == item.id;
+    })
+    return f.length;
+  }
+
+  sum() {
+    let sum = 0;
+    if (this.listItem.length) {
+
+      for (let i = 0; i < this.listItem.length; i++) {
+        sum += this.listItem[i].number * this.listItem[i].price
+      }
+    }
+    return sum;
+  }
+
+  sendData() {
+    console.log({ data: this.listItem, idRestaurant: this.idRestaurant, township: this.restaurant.township });
+    
+    localStorage.setItem("datmon_pay", JSON.stringify({ data: this.listItem, idRestaurant: this.idRestaurant, township: this.restaurant.township }));
+    this.router.navigate(['/payment'])
+  }
 }

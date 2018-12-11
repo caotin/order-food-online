@@ -6,7 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { IndexComponent } from './index/index.component';
 import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { RestaurantComponent } from './restaurant/restaurant.component';
@@ -16,7 +16,8 @@ import { PaymentComponent } from './payment/payment.component';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     HeaderComponent, 

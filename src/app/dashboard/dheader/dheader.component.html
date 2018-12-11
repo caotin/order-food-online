@@ -77,12 +77,12 @@
         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
       </a>
       <ul class="dropdown-menu dropdown-user">
-        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+        <li><a href="javascript:void(0)"><i class="fa fa-user fa-fw"></i> User Profile</a>
         </li>
-        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+        <li><a href="javascript:void(0)" routerLink="/dashboard/setting"><i class="fa fa-gear fa-fw"></i> Thông tin nhà hàng</a>
         </li>
         <li class="divider"></li>
-        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+        <li><a href="javascript:void(0)" (click)="onLogout()"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
         </li>
       </ul>
       <!-- /.dropdown-user -->
@@ -106,16 +106,16 @@
           <!-- /input-group -->
         </li>
         <li>
-          <a [routerLink]="['/dashboard']"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+          <a [routerLink]="['/dashboard']"><i class="fa fa-dashboard fa-fw"></i> Quản lý admin</a>
         </li>
         <li>
-          <a [routerLink]="['/dashboard/food']"><i class="fa fa-table fa-fw"></i> Food</a>
+          <a [routerLink]="['/dashboard/food']"><i class="fa fa-table fa-fw"></i> Thức ăn</a>
         </li>
         <li>
-          <a [routerLink]="['/dashboard/order']"><i class="fa fa-list fa-fw"></i> Bill</a>
+          <a [routerLink]="['/dashboard/order']"><i class="fa fa-list fa-fw"></i> Hóa đơn</a>
         </li>
         <li>
-          <a [routerLink]="['/dashboard/setting']"><i class="fa fa-gear fa-fw"></i> Settings</a>
+          <a [routerLink]="['/dashboard/setting']"><i class="fa fa-gear fa-fw"></i> Thông tin nhà hàng</a>
         </li>
       </ul>
     </div>

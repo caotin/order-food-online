@@ -11,7 +11,7 @@ import { CityService } from './core/service/city.service';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
 import { NothingComponent } from './nothing/nothing.component';
@@ -33,13 +33,14 @@ import { PageErrorComponent } from './page-error/page-error.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
   ],
   exports:[
   ],
   providers: [
     UserLoginService,
-    CityService
+    CityService,
+    { provide: StorageBucket, useValue: 'gs://datmon-16796.appspot.com' }
   ],
   bootstrap: [AppComponent]
 })

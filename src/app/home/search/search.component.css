@@ -1,0 +1,15 @@
+.list-kitchen a {
+    -webkit-transform: translateZ(0);
+    height: 40px;
+    line-height: 37px;
+    white-space: nowrap;
+    margin-bottom: 4px;
+    box-shadow: 0 2px 2px #cfcac4;
+    display: inline-block;
+    background-color: #fff;
+    padding: 0 16px;
+    width: 99%;
+    border-radius: 3px;
+    font-size: 15px;
+    color: #666;
+}

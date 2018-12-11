@@ -12,6 +12,7 @@ import { ManagerComponent } from './dashboard/manager/manager.component';
 import { UsersComponent } from './dashboard/users/users.component';
 import { FoodComponent } from './dashboard/food/food.component';
 import { PageErrorComponent } from './page-error/page-error.component';
+import { PaymentComponent } from './home/payment/payment.component';
 
 const routes: Routes = [
     {
@@ -27,6 +28,7 @@ const routes: Routes = [
             { path: '', component: IndexComponent },
             { path: 'search/:city/:township', component: SearchComponent },
             { path: 'search/:city/:township/:id', component: RestaurantComponent },
+            { path: 'payment', component: PaymentComponent },
         ]
     },
 

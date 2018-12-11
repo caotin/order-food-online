@@ -1,3 +1,112 @@
-<p>
-  manager works!
-</p>
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Danh sách đơn hàng</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Danh sách món ăn
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                            <tr>
+                                <th>Tên khách hàng</th>
+                                <th>Số điện thoại</th>
+                                <th>Địa chỉ</th>
+                                <th>Xác nhận</th>
+                                <th>Chức năng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="odd gradeX" *ngFor="let d of data">
+                                <td>{{d.name}}</td>
+                                <td>{{d.description}}</td>
+                                <td>{{d.address}}</td>
+                                <td class="center">{{d.status?"Đã xác nhận":"Chưa xác nhận"}}</td>
+                                <td class="center">
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"
+                                        (click)="onView(d)">Xem chi tiết</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Chi tiết đơn hàng</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Thông tin khách hàng</h3>
+                <label for="">Tên khách hàng:</label>
+                <p>{{view?.name}}</p>
+                <label for="">Địa chỉ:</label>
+                <p>{{view?.address}}</p>
+                <label for="">Số điện thoại:</label>
+                <p>{{view?.phoneNumber}}</p>
+                <label for="">Email:</label>
+                <p>{{view?.email}}</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Chi tiết đơn hàng
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Tên món ăn</th>
+                                        <th>Số lượng</th>
+                                        <th>Giá</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let a of view?.data">
+                                        <td>{{a?.id}}</td>
+                                        <td>{{a?.name}}</td>
+                                        <td>{{a?.number}}</td>
+                                        <td>{{a?.price}}</td>
+                                    </tr>
+                                </tbody>
+                                <label for="">Tổng cộng: {{sum(view?.data)}}</label>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="onChangeBill()" class="btn btn-primary">Xác nhận đơn hàng</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div id="page-wrapper">
+    
+</div> -->
