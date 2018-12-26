@@ -46,12 +46,12 @@ export class FoodComponent implements OnInit {
     })
   }
 
-  onDelete(id){
+  onDelete(id) {
     const self = this;
-    this.fd.delete(id).then(data=>{
+    this.fd.delete(id).then(data => {
       alert("Xóa thành công");
       self.loadData()
-    }).catch(err=>{
+    }).catch(err => {
       alert("Xóa thất bại");
     })
   }
@@ -59,6 +59,7 @@ export class FoodComponent implements OnInit {
   onSubmit(data) {
     let self = this;
     if (data && this.file) {
+
       let name = this.uuidv4();
       this.st.uploadFile(this.file, name).then(file => {
         self.st.getUrl(name).subscribe(url => {
