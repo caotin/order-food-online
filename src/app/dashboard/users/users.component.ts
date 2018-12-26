@@ -93,6 +93,7 @@ export class UsersComponent implements OnInit {
   loadData() {
     let email = localStorage.getItem("datmon_email");
     const self = this;
+    if (!email) return;
     this.rs.findByEmail(email).subscribe(data => {
       if (data) {
 

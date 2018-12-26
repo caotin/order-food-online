@@ -15,7 +15,7 @@ export class RestaurentService {
     return this.db.collection(this.table).doc(id).valueChanges();
   }
 
-  findByEmail(email: string):any {
+  findByEmail(email: string): any {
     return this.db.collection(this.table).doc(email).valueChanges();
   }
 
@@ -27,7 +27,7 @@ export class RestaurentService {
   }
 
   updateData(data) {
-    
+
     return this.db.doc(this.table + "/" + data.email).update(data);
   }
 }

@@ -24,25 +24,30 @@ export class RestaurantComponent implements OnInit {
     this.city = JSON.parse(localStorage.getItem("datmon_city"));
 
     this.route.params.subscribe(paramsId => {
-      if (paramsId['id']) {
+      if (paramsId && paramsId['id']) {
         let id = paramsId['id'];
-        this.idRestaurant = paramsId['id'];
-        this.rs.findById(id).subscribe(data => {
-          if (data && this.city) {
-            self.restaurant = data;
-            self.area = self.city.filter(value => {
-              return value.id == self.restaurant.idCity;
-            })
-            // self.loadCity(self.restaurant.township);
-            self.area = self.loadCity(self.restaurant.township);
+        if (id) {
+          console.log("abc", id);
 
-          }
-        });
-        this.fs.findByIdRestaurant(id).subscribe(data => {
-          if (data) {
-            self.food = data;
-          }
-        });
+          this.idRestaurant = paramsId['id'];
+          this.rs.findById(id).subscribe(data => {
+            if (data && this.city) {
+              self.restaurant = data;
+              self.area = self.city.filter(value => {
+                return value.id == self.restaurant.idCity;
+              })
+              // self.loadCity(self.restaurant.township);
+              self.area = self.loadCity(self.restaurant.township);
+
+            }
+          });
+          this.fs.findByIdRestaurant(id).subscribe(data => {
+            if (data) {
+              self.food = data;
+            }
+          });
+        }
+
       }
     });
   }
@@ -109,7 +114,7 @@ export class RestaurantComponent implements OnInit {
 
   sendData() {
     console.log({ data: this.listItem, idRestaurant: this.idRestaurant, township: this.restaurant.township });
-    
+
     localStorage.setItem("datmon_pay", JSON.stringify({ data: this.listItem, idRestaurant: this.idRestaurant, township: this.restaurant.township }));
     this.router.navigate(['/payment'])
   }

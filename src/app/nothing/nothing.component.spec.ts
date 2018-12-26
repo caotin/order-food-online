@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NothingComponent } from './nothing.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('NothingComponent', () => {
   let component: NothingComponent;
@@ -8,9 +9,10 @@ describe('NothingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NothingComponent ]
+      declarations: [NothingComponent],
+      imports: [RouterTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

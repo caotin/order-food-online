@@ -6,23 +6,21 @@ import { AuthInfo } from './auth-info';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class UserLoginService {
 
-  static UNKNOWN_USER = new AuthInfo(null);
+    static UNKNOWN_USER = new AuthInfo(null);
 
-  authInfo$: BehaviorSubject<AuthInfo> = new BehaviorSubject<AuthInfo>(UserLoginService.UNKNOWN_USER);
-
-
-  constructor(private afAuth: AngularFireAuth, private router:Router) {
-
-  }
+    authInfo$: BehaviorSubject<AuthInfo> = new BehaviorSubject<AuthInfo>(UserLoginService.UNKNOWN_USER);
 
 
+    constructor(private afAuth: AngularFireAuth, private router: Router) {
+
+    }
 
 
-    login(email, password):Observable<AuthInfo> {
+    login(email, password): Observable<AuthInfo> {
         return this.fromFirebaseAuthPromise(this.afAuth.auth.signInWithEmailAndPassword(email, password));
     }
 
@@ -38,17 +36,17 @@ export class UserLoginService {
      *
      * */
 
-    fromFirebaseAuthPromise(promise):Observable<any> {
+    fromFirebaseAuthPromise(promise): Observable<any> {
 
         const subject = new Subject<any>();
 
         promise
             .then(res => {
-                    const authInfo = new AuthInfo(this.afAuth.auth.currentUser.uid);
-                    this.authInfo$.next(authInfo);
-                    subject.next(res);
-                    subject.complete();
-                },
+                const authInfo = new AuthInfo(this.afAuth.auth.currentUser.uid);
+                this.authInfo$.next(authInfo);
+                subject.next(res);
+                subject.complete();
+            },
                 err => {
                     this.authInfo$.error(err);
                     subject.error(err);
