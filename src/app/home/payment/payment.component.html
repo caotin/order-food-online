@@ -1,0 +1,75 @@
+<!--Content-->
+<div class="content-tk">
+  <div class="container">
+    <form class="thanhtoan" [formGroup]="myForm">
+      <h1>Bạn đã sẵn sàng để thưởng thức?</h1>
+      <h2>Thông tin giao hàng</h2>
+      <div class="thongtingiaohang">
+        <div class="grid form-controlinfo">
+          <p class="add-info">Số nhà và tên đường: </p>
+          <input class="form-control" type="text" formControlName="address" placeholder="Nhập số nhà và tên đường">
+        </div>
+        <!-- <div class="grid district">
+          <p class="add-info">Quận: </p>
+          <select class="form-control" formControlName="township">
+            <option *ngFor="let t of township" [value]="t" >{{}}</option>
+          </select>
+        </div> -->
+        <div class="grid where">
+          <p class="add-info">Nơi đến: </p>
+          <select class="form-control" formControlName="home">
+            <option value="Nhà">Nhà</option>
+            <option value="Căn Hộ">Căn Hộ</option>
+            <option value="Khách Sạn">Khách Sạn</option>
+            <option value="Khu Biệt Thự">Khu Biệt Thự</option>
+          </select>
+        </div>
+        <div class="grid ward">
+          <p class="add-info">Quận huyện/ Thành phố: </p>
+          <input class="form-control" type="text" formControlName="township" placeholder="Quận huyện/ Thành phố">
+        </div>
+      </div>
+      <div class="thongtincanhan">
+        <p class="thongtincanhan">Thông tin cá nhân</p>
+        <div class="grid name">
+          <p class="add-info">Họ tên: </p>
+          <input class="form-control" type="text" formControlName="name" placeholder="Nhập tên">
+        </div>
+        <div class="grid email">
+          <p class="add-info">Email: </p>
+          <input class="form-control" type="text" formControlName="email" placeholder="Nhập email">
+        </div>
+        <div class="grid phone">
+          <p class="add-info">Số điện thoại: </p>
+          <input class="form-control" type="text" formControlName="phoneNumber" placeholder="Nhập số điện thoại">
+        </div>
+      </div>
+      <div class="thoigiangiaohang">
+        <p class="thoigiangiaohang">Thời Gian Giao Hàng</p>
+        <div class="grid where">
+          <p class="add-info">Vui lòng chọn thời gian giao hàng: </p>
+          <select class="form-control" style="margin-left: 0px;" formControlName="timeSend">
+            <option value="Càng nhanh càng tốt">Càng nhanh càng tốt</option>
+            <option value="17:30">17:30</option>
+            <option value="17:45">17:45</option>
+            <option value="18:00">18:00</option>
+          </select>
+        </div>
+        <div class="grid where">
+          <p class="ghichu">Ghi chú</p>
+          <textarea class="form-control" formControlName="description"></textarea>
+          <!-- <div class="checkboxFive">
+            <input type="checkbox" value="1" id="checkboxFiveInput" name="" />
+            <label for="checkboxFiveInput"></label>
+            <span>Save these remarks for your next order.</span>
+          </div> -->
+        </div>
+      </div>
+      <div class="hoantat">
+        <button class="btn-hoantat" (click)="myForm.valid&&sendData(myForm.value)">Hoàn Tất</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--End-Content-->

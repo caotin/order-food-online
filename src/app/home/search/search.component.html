@@ -1,0 +1,40 @@
+<!--Content-->
+<div class="content-tk">
+    <div class="container">
+        <div class="column-left">
+            <div class="soluong">
+                18 Nhà Hàng
+            </div>
+            <div class="kitchen">
+                <span class="title">Ẩm thực</span>
+                <div class="atom-kitchen">
+                    <div class="ctc"><a href="#" class="chontatca"><i class="fa fa-cutlery" ></i> Chọn tất cả</a></div>
+                    <div class="list-kitchen">
+                        <a href="#">Italian & Pizza (2)</a>
+                        <a href="#">Món Nhật và Sushi (1)</a>
+                        <a href="#">Cơm (3)</a>
+                        <a href="#">Bánh Mỳ & Xôi (6)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column-right">
+            <div class="col line-1"  *ngFor="let f of data">
+                <div class="logo-right">
+                    <img src="{{f.image}}">
+                </div>
+                <div class="thongtin-right" >
+                    <div class="title-right">
+                        <a [routerLink]="[f.email]" class="monan">{{f.name}}</a>
+                    </div>
+                    <div class="kitchen-right">{{f.address}}</div>
+                    <div class="ship">
+                        <div class="delivery"><i class="fa fa-bicycle" aria-hidden="true"></i> {{f.transportFee}}</div>
+                        <div class="avgdeliverytime"><i class="fa fa-times" aria-hidden="true"></i> {{f.transportTime}}</div>
+                        <div class="min-order"><i class="fa fa-database"></i> Đặt tối thiểu. {{f.payMin}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
