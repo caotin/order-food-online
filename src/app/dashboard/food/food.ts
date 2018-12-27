@@ -79,48 +79,42 @@ export class FoodBuilder {
 }
 
 export class Food {
-    private id: string;
-    private name: string;
-    private description: string;
-    private idRestaurant: string;
-    private image: string;
-    private price: number;
-    private createAt: string;
+
     constructor(private foodBuilder: FoodBuilder) {
-        this.id = foodBuilder.Id;
-        this.name = foodBuilder.Name;
-        this.description = foodBuilder.Description;
-        this.image = foodBuilder.Image;
-        this.idRestaurant = foodBuilder.IdRestaurant;
-        this.price = foodBuilder.Price;
-        this.createAt = foodBuilder.CreateAt;
+
+        foodBuilder.Name;
+        foodBuilder.Description;
+        foodBuilder.Image;
+        foodBuilder.IdRestaurant;
+        foodBuilder.Price;
+        foodBuilder.CreateAt;
     }
 
-    get Id() {
-        return this.id;
+    get id() {
+        return this.foodBuilder.Id;
     }
 
-    get Name() {
-        return this.name;
+    get name() {
+        return this.foodBuilder.Name;
     }
 
-    get Description() {
-        return this.description;
+    get description() {
+        return this.foodBuilder.Description;
     }
 
-    get IdRestaurant() {
-        return this.idRestaurant;
+    get idRestaurant() {
+        return this.foodBuilder.IdRestaurant;
     }
 
-    get Image() {
-        return this.image;
+    get image() {
+        return this.foodBuilder.Image;
     }
 
-    get Price() {
-        return this.price;
+    get price() {
+        return this.foodBuilder.Price;
     }
 
-    get CreateAt() {
-        return this.createAt;
+    get createAt() {
+        return this.foodBuilder.CreateAt;
     }
 }

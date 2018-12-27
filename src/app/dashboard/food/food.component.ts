@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StorageService } from 'src/app/core/service/storage.service';
 import { FoodService } from 'src/app/core/service/food.service';
+import { Food, FoodBuilder } from './food';
 
 @Component({
   selector: 'app-food',
@@ -67,6 +68,17 @@ export class FoodComponent implements OnInit {
           data.id = self.uuidv4();
           data.createAt = new Date();
           data.idRestaurant = this.idRestaurant;
+          let fo: Food = new FoodBuilder()
+            .setId(data.id)
+            .setCreateAt(data.createAt)
+            .setIdRestaurant(data.idRestaurant)
+            .setImage(data.image)
+            .setPrice(data.price)
+            .setName(data.name)
+            .setDescription(data.description)
+            .build();
+          console.log(fo);
+
           self.fd.addNew(data)
             .then(s => { alert("Cập nhật thành công"); self.loadData(); self.initForm(); self.setDefaultValue() })
             .catch(err => { alert("Cập nhật thất bại"); self.loadData(); self.initForm(); });
